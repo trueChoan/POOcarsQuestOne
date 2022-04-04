@@ -2,6 +2,9 @@
 require_once 'car.php';
 require_once 'Bicycle.php';
 require_once 'Truck.php';
+require_once 'Motorway.php';
+require_once 'HighWay.php';
+require_once 'PedestrianWay.php';
 
 $margeWagon = new Car('Orange', 5, 'Gazoil');
 
@@ -28,3 +31,18 @@ echo $truck->getTruckLoad();
 
 echo $truck->start();
 echo $truck->brake();
+
+
+$A55 = new MotorWay();
+
+$A55->addVehicle($truck);
+$truckPeugeot = new Truck('Bleu', 8, 'fuel', 800, 300);
+$A55->addVehicle($truckPeugeot);
+$truckPeugeot->setNbWheels(12);
+
+$A55->addVehicle($bicycle);
+var_dump($A55);
+
+$promenade = new PedestrianWay();
+$promenade->addVehicle($margeWagon);
+var_dump($promenade);

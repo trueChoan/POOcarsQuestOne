@@ -12,6 +12,9 @@ class Truck extends Vehicle
     private int $storageCapacity;
     private int $truckLoad = 0;
     private string $energy;
+    // je rappelle la variable pour avoir par défaut 8 wheels : 
+    protected int $nbWheels = 8;
+
 
     public function __construct(string $color, int $nbSeats, string $energy, int $storageCapacity, int $truckLoad)
     {
