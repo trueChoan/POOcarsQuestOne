@@ -1,4 +1,7 @@
 <?php
+
+
+
 abstract class  Vehicle
 {
 
@@ -76,14 +79,15 @@ abstract class  Vehicle
             $this->currentSpeed--;
             $sentence .= "Brake !!!";
         }
-        $sentence .= "I'm stopped !";
+        $sentence .= PHP_EOL . "I'm stopped !" . PHP_EOL;
         return $sentence;
     }
     public function start()
     {
-        if ($this->currentSpeed == 0) {
+
+        if ($this->currentSpeed == 0 | $this->currentSpeed < 50) {
             $sentence = "" . PHP_EOL;
-            while ($this->currentSpeed < 30) {
+            while ($this->currentSpeed < 50) {
                 $this->currentSpeed += 5;
                 $sentence .= "GETTING SPEED" . PHP_EOL;
             }

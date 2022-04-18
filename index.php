@@ -19,6 +19,7 @@ $bicycle = new Bicycle('blue', 1);
 echo $bicycle->forward();
 
 $car = new Car('green', 4, 'electric');
+
 echo $car->forward();
 
 $truck = new Truck('Pink', 4, 'fuel', 500, 300);
@@ -38,11 +39,27 @@ $A55 = new MotorWay();
 $A55->addVehicle($truck);
 $truckPeugeot = new Truck('Bleu', 8, 'fuel', 800, 300);
 $A55->addVehicle($truckPeugeot);
-$truckPeugeot->setNbWheels(12);
+$truckPeugeot->setNbWheels(12) . PHP_EOL;
 
 $A55->addVehicle($bicycle);
-var_dump($A55);
-
+// var_dump($A55);
+PHP_EOL;
 $promenade = new PedestrianWay();
 $promenade->addVehicle($margeWagon);
-var_dump($promenade);
+// var_dump($promenade);
+
+// exception quetes poo4 
+
+$car->setParkBrake(true);
+$car->setEnergyLevel(100);
+
+try {
+    $car->start();
+} catch (Exception $e) {
+    echo 'Exception reçue : ', $e->getMessage(), "\n";
+    $car->setParkBrake(false);
+} finally {
+    echo "Ma voiture roule comme un donut DOH" . "\n";
+}
+
+echo $car->start();

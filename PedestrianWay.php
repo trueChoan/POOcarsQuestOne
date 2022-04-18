@@ -16,7 +16,7 @@ final class PedestrianWay extends HighWay
         if ($vehicle instanceof ('Bicycle') || $vehicle instanceof ('Sakteboard')) {
             $this->currentVehicles[] = $vehicle;
         } else {
-            echo "VOUS ALLEZ TUER QUELQU'UN";
+            echo "VOUS ALLEZ TUER QUELQU'UN" . PHP_EOL;
         }
     }
 }

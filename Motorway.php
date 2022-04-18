@@ -17,7 +17,7 @@ final class MotorWay extends HighWay
         if ($vehicle instanceof ('Truck') || $vehicle instanceof ('Car')) {
             $this->currentVehicles[] = $vehicle;
         } else {
-            echo "YOU WANT TO DIE BRAH ?";
+            echo "YOU WANT TO DIE BRAH ?" . PHP_EOL;
         }
     }
 }
