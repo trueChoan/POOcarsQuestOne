@@ -54,7 +54,7 @@ $car->setParkBrake(true);
 $car->setEnergyLevel(100);
 
 try {
-    $car->start();
+    echo $car->start();
 } catch (Exception $e) {
     echo 'Exception reçue : ', $e->getMessage(), "\n";
     $car->setParkBrake(false);
@@ -63,3 +63,6 @@ try {
 }
 
 echo $car->start();
+
+echo $bicycle->start();
+echo $bicycle->switchOn();

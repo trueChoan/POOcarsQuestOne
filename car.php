@@ -1,10 +1,12 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once 'lightableinterface.php';
+
+use LightableInterface;
 
 
-
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
     public const ALLOWED_ENERGIES = [
         'fuel',
@@ -34,7 +36,14 @@ class Car extends Vehicle
         }
         return $this;
     }
-
+    public function switchOn(): bool
+    {
+        return true;
+    }
+    public function switchOff(): bool
+    {
+        return false;
+    }
     public function getEnergyLevel(): int
     {
         return $this->energyLevel;
@@ -83,5 +92,8 @@ class Car extends Vehicle
             return $sentence . 'energy left : ' . $this->getenergyLevel();
         }
         return "Already speeding";
+
+        // return parent::start();
+
     }
 }
