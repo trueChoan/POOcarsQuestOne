@@ -5,6 +5,7 @@ require_once 'Truck.php';
 require_once 'Motorway.php';
 require_once 'HighWay.php';
 require_once 'PedestrianWay.php';
+require_once 'Speedometer.php';
 
 $margeWagon = new Car('Orange', 5, 'Gazoil');
 
@@ -65,4 +66,6 @@ try {
 echo $car->start();
 
 echo $bicycle->start();
-echo $bicycle->switchOn();
+echo $bicycle->switchOn() . "\n";
+
+echo Speedometer::convertKmToMiles(10);
